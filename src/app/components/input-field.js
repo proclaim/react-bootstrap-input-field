@@ -8,19 +8,19 @@ InputField = React.createClass({
 
     propTypes: {
         type            : React.PropTypes.oneOf(['default','withIcon']),
-        name            : React.PropTypes.string.isRequired,                // identifier for onChange event
-        label           : React.PropTypes.string,                           // label to be displayed
-        value           : React.PropTypes.string,                           // set value to input field
-        iconText        : React.PropTypes.string,                           // text used when using type 2
-        iconClassName   : React.PropTypes.string,                           // icon class used when using type 2, if provided, will overwrite icon
-        placeholder     : React.PropTypes.string,                           // place holder text
-        inputType       : React.PropTypes.string,                           // text || password || number || range || email
-        inputSize       : React.PropTypes.string,                           // (empty) || large || small
-        required        : React.PropTypes.bool,                             // will have red border when input is empty
-        onChange        : React.PropTypes.func.isRequired,                  // will return [ name (string), value(string), 3.isValidInput (bool) ]
-        min             : React.PropTypes.number,                           // minimum for range input
-        max             : React.PropTypes.number,                           // maxumum for range input
-        validationRegex : React.PropTypes.object                            // regular expression for validation
+        name            : React.PropTypes.string.isRequired,
+        label           : React.PropTypes.string,
+        value           : React.PropTypes.string,
+        iconText        : React.PropTypes.string,
+        iconClassName   : React.PropTypes.string,
+        placeholder     : React.PropTypes.string,
+        inputType       : React.PropTypes.string,
+        inputSize       : React.PropTypes.string,
+        required        : React.PropTypes.bool,
+        onChange        : React.PropTypes.func.isRequired,
+        min             : React.PropTypes.number,
+        max             : React.PropTypes.number,
+        validationRegex : React.PropTypes.object
     },
     getDefaultProps: function() {
         return {
@@ -47,7 +47,6 @@ InputField = React.createClass({
         return value !== '';
     },
     _matchEmailRule: function(email) {
-        // current email rule is [string]@[string] simple verification
         return email.match(/\S+@\S+/) !== null;
     },
     _handleFieldChange: function(event) {
@@ -64,7 +63,6 @@ InputField = React.createClass({
                     break;
 
                 case 'number':
-                    // if user paste in data, strip all none numbers
                     event.target.value = event.target.value.replace(/\D/g,'');
                     break;
             }
