@@ -63,7 +63,7 @@ InputField = React.createClass({
                     break;
 
                 case 'number':
-                    event.target.value = event.target.value.replace(/\D/g,'');
+                    inputValue = event.target.value = event.target.value.replace(/\D/g,'');
                     break;
             }
         }
