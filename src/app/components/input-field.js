@@ -85,7 +85,7 @@ InputField = React.createClass({
         // validation for number
         if(this.props.inputType == 'number') {
             // Allow: backspace, delete, tab, escape, enter and .
-            if ($.inArray(event.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            if (![46, 8, 9, 27, 13, 110, 190].find(event.keyCode) ||
                 // Allow: Ctrl+A
                 (event.keyCode == 65 && (event.metaKey || event.ctrlKey)) ||
                 // Allow paste (ctrl + V)
